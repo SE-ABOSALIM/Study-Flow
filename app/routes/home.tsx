@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router";
 import type { Route } from "./+types/home";
+import Sidebar from "~/components/Sidebar";
+import Header from "~/components/Header";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -8,5 +11,12 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <div>HomePage</div>;
+  const navigate = useNavigate();
+
+  return (
+    <main className="flex min-h-screen">
+      {/* <Header /> */}
+      <Sidebar />
+    </main>
+  );
 }
